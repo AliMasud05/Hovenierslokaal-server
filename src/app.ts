@@ -14,13 +14,13 @@ const app: Application = express();
 app.use(cors({
   origin: [
     "https://www.hovenierslokaal.nl",
-    "https://hovenierslokaal.nl" // Add non-www version
+    "https://hovenierslokaal.nl",
+    "https://64.225.69.59" // Add your server's HTTPS URL
   ],
   credentials: true,
   methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type']
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
-
 // Add explicit OPTIONS handler
 app.options('*', cors());
 
