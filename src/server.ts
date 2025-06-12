@@ -34,10 +34,14 @@ async function bootstrap() {
   try {
     await connectToDatabase();
     //await seed();
-
-    server = app.listen(5001,'0.0.0.0', () => {
-      console.log(`🚀 Application is running on port:${config.port}`);
+    const port = Number(config.port) || 5001; // Ensure port is a number, fallback to 5001 if config.port is undefined or not a number.
+    server = app.listen(port, "0.0.0.0", () => {
+      console.log(`🚀 Application is running on port: ${port}`);
     });
+
+    // server = app.listen(5001,'0.0.0.0', () => {
+    //   console.log(`🚀 Application is running on port:${config.port}`);
+    // });
 
     // Listen for termination signals
     process.on("SIGTERM", () => gracefulShutdown("SIGTERM"));
