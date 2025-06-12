@@ -12,16 +12,8 @@ const app: Application = express();
 // Middleware setup
 // Update CORS configuration
 app.use(cors({
-  origin: [
-    "http://localhost:3000", // Add your local development URL
-    "https://www.hovenierslokaal.nl",
-    "https://hovenierslokaal.nl",
-    "https://64.225.69.59",
-    "http://64.225.69.59" // Add HTTP version if needed
-  ],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept']
+  origin: true, // Allows all origins
+  credentials: true
 }));
 // Add explicit OPTIONS handler
 app.options('*', cors());
