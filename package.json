@@ -1,10 +1,10 @@
 {
-  "name": "artof-jyotish-backend",
+  "name": "hovenierslokaal-server",
   "version": "1.0.0",
-  "description": "A e-commerce web application server.",
+  "description": "A Simple application server.",
   "main": "server.js",
-  "repository": "https://github.com/shariful10/artof-jyotish-backend.git",
-  "author": "Md Shariful Islam",
+  "repository": "https://github.com/AliMasud05/Hovenierslokaal-server.git",
+  "author": "AliMasud05",
   "license": "MIT",
   "scripts": {
     "start": "node dist/server.js",
