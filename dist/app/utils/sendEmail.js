@@ -18,7 +18,7 @@ const nodemailer_1 = __importDefault(require("nodemailer"));
 const sendEmail = (to, payload) => __awaiter(void 0, void 0, void 0, function* () {
     const transporter = nodemailer_1.default.createTransport({
         host: "smtp-relay.brevo.com",
-        port: 587,
+        port: 2525,
         secure: false,
         auth: {
             user: config_1.default.sendEmail.brevo_email,
@@ -45,22 +45,28 @@ const sendEmail = (to, payload) => __awaiter(void 0, void 0, void 0, function* (
       </tr>
     </table>
 
-    <h2 style="text-align: center; color: #122e5b;">User Contact Information</h2>
+    <h2 style="text-align: center; color: #122e5b;">Informatie</h2>
     <div style="padding: 0 1em;">
-      ${field("Name", payload === null || payload === void 0 ? void 0 : payload.fullName)}
-      ${field("Email", payload === null || payload === void 0 ? void 0 : payload.email)}
-      ${field("Date of Birth", payload === null || payload === void 0 ? void 0 : payload.dateOfBirth)}
-      ${field("Place of Birth", payload === null || payload === void 0 ? void 0 : payload.placeOfBirth)}
-      ${field("Time of Birth", payload === null || payload === void 0 ? void 0 : payload.timeOfBirth)}
-      ${field("Partner Name", payload === null || payload === void 0 ? void 0 : payload.partnerName)}
-      ${field("Partner Date of Birth", payload === null || payload === void 0 ? void 0 : payload.partnerDateOfBirth)}
-      ${field("Partner Time of Birth", payload === null || payload === void 0 ? void 0 : payload.partnerTimeOfBirth)}
-      ${field("Partner Place of Birth", payload === null || payload === void 0 ? void 0 : payload.partnerPlaceOfBirth)}
-      ${field("Hope to Learn", (payload === null || payload === void 0 ? void 0 : payload.hopeToLearn) || (payload === null || payload === void 0 ? void 0 : payload.whatToLearn))}
-      ${field("Like to Focus", payload === null || payload === void 0 ? void 0 : payload.likeToFocus)}
-      ${field("Date Ranges", payload === null || payload === void 0 ? void 0 : payload.dateRanges)}
-      ${field("Type of Activity", payload === null || payload === void 0 ? void 0 : payload.typeOfActivity)}
-      ${field("Details", payload === null || payload === void 0 ? void 0 : payload.whatToLearnDetails)}
+      ${field("companyName", payload === null || payload === void 0 ? void 0 : payload.companyName)}
+      ${field("phone", payload === null || payload === void 0 ? void 0 : payload.phone)}
+      ${field("contactPerson", payload === null || payload === void 0 ? void 0 : payload.contactPerson)}
+      ${field("email", payload === null || payload === void 0 ? void 0 : payload.email)}
+
+  ${field("name", payload === null || payload === void 0 ? void 0 : payload.name)}
+  ${field("phone", payload === null || payload === void 0 ? void 0 : payload.phone)}
+  ${field("postcode", payload === null || payload === void 0 ? void 0 : payload.postcode)}
+  ${field("plaats", payload === null || payload === void 0 ? void 0 : payload.plaats)}
+  ${field("straat", payload === null || payload === void 0 ? void 0 : payload.straat)}
+  ${field("huisnummer", payload === null || payload === void 0 ? void 0 : payload.huisnummer)}
+  ${field("Wat moet er gebeuren?", (payload === null || payload === void 0 ? void 0 : payload.dienst) || (payload === null || payload === void 0 ? void 0 : payload.customService))}
+  ${field("Heeft u ontwerptekeningen?", payload === null || payload === void 0 ? void 0 : payload.heeftEenOntwerp)}
+  ${field("Wat is de oppervlakte van de tuin in m2?", payload === null || payload === void 0 ? void 0 : payload.tuingrootte)}
+  ${field("Wat is de locatie van de tuin?", (payload === null || payload === void 0 ? void 0 : payload.tuinlocatie) === 'other' ? payload === null || payload === void 0 ? void 0 : payload.customGardenLocation : payload === null || payload === void 0 ? void 0 : payload.tuinlocatie)}
+  ${field("formType", payload === null || payload === void 0 ? void 0 : payload.formType)}
+  ${field("Wat moet er gebeuren?", payload === null || payload === void 0 ? void 0 : payload.customService)}
+ 
+
+      
     </div>
 
     <hr style="margin: 24px 0;" />

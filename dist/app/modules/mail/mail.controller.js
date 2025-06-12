@@ -25,6 +25,10 @@ const sendMail = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 
         data: null,
     });
 }));
+const test = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.send(`<div style="background: black; border-radius: 15px; width: 700px; height: 200px; margin: auto; margin-top: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center;"><h1 style="color: white; text-align: center;">Welcome to the server of Art Jyotish!</h1></div>`);
+}));
 exports.MailController = {
     sendMail,
+    test,
 };
