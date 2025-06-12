@@ -35,7 +35,7 @@ async function bootstrap() {
     await connectToDatabase();
     //await seed();
 
-    server = app.listen(Number(config.port), () => {
+    server = app.listen(Number(config.port),'0.0.0.0', () => {
       console.log(`🚀 Application is running on port:${config.port}`);
     });
 
