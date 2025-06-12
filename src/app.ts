@@ -10,20 +10,19 @@ import morgan from "morgan";
 const app: Application = express();
 
 // Middleware setup
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "https://www.hovenierslokaal.nl", // Removed trailing slash
-      "https://hovenierslokaal.nl" ,// Add non-www version
-       "http://64.225.69.59:5001", // Added IP address
-    ],
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-    exposedHeaders: ['Content-Length', 'X-Powered-By'] // Optional but helpful
-  })
-);
+// Update CORS configuration
+app.use(cors({
+  origin: [
+    "https://www.hovenierslokaal.nl",
+    "https://hovenierslokaal.nl" // Add non-www version
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type']
+}));
+
+// Add explicit OPTIONS handler
+app.options('*', cors());
 
 app.use(cookieParser());
 app.use(express.json());
