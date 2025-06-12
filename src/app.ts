@@ -13,13 +13,14 @@ const app: Application = express();
 app.use(
   cors({
     origin: [
-      "http://localhost:3000", // Local frontend during development
-      "https://www.hovenierslokaal.nl", // Production domain
-      "http://64.225.69.59" // Server's IP address for direct access
+      "http://localhost:3000",
+      "https://www.hovenierslokaal.nl", // Removed trailing slash
+      "https://hovenierslokaal.nl" // Add non-www version
     ],
-    credentials: true, // Allow cookies to be sent with requests
+    credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    exposedHeaders: ['Content-Length', 'X-Powered-By'] // Optional but helpful
   })
 );
 
