@@ -13,13 +13,15 @@ const app: Application = express();
 // Update CORS configuration
 app.use(cors({
   origin: [
+    "http://localhost:3000", // Add your local development URL
     "https://www.hovenierslokaal.nl",
     "https://hovenierslokaal.nl",
-    "https://64.225.69.59" // Add your server's HTTPS URL
+    "https://64.225.69.59",
+    "http://64.225.69.59" // Add HTTP version if needed
   ],
   credentials: true,
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept']
 }));
 // Add explicit OPTIONS handler
 app.options('*', cors());
