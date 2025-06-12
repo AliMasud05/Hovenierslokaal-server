@@ -10,7 +10,7 @@ const app: Application = express();
 // Middleware setup
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://194.195.86.21:3000"],
+    origin: ["http://localhost:3000", "https://www.hovenierslokaal.nl/"],
     credentials: true,
   })
 );
