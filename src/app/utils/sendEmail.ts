@@ -54,7 +54,7 @@ export const sendEmail = async (to: string, payload: any) => {
   ${field("Wat is de locatie van de tuin?", payload?.tuinlocatie === 'other' ? payload?.customGardenLocation : payload?.tuinlocatie)}
   ${field("formType", payload?.formType)}
   ${field("Wat moet er gebeuren?", payload?.customService)}
-  ${field("Wat is de locatie van de tuin?", payload?.customGardenLocation)}
+ 
 
       
     </div>
