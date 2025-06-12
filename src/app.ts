@@ -15,7 +15,8 @@ app.use(
     origin: [
       "http://localhost:3000",
       "https://www.hovenierslokaal.nl", // Removed trailing slash
-      "https://hovenierslokaal.nl" // Add non-www version
+      "https://hovenierslokaal.nl" ,// Add non-www version
+       "http://64.225.69.59:5001", // Added IP address
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
