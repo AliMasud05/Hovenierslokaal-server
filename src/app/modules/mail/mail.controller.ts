@@ -14,6 +14,12 @@ const sendMail = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const test = catchAsync(async (req: Request, res: Response) => {
+  res.send(
+    `<div style="background: black; border-radius: 15px; width: 700px; height: 200px; margin: auto; margin-top: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center;"><h1 style="color: white; text-align: center;">Welcome to the server of Art Jyotish!</h1></div>`
+  );
+});
 export const MailController = {
   sendMail,
+  test,
 };

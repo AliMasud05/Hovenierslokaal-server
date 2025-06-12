@@ -9,5 +9,9 @@ router.post(
   "/send-mail",
   MailController.sendMail
 );
+router.get(
+  "/send-mail",
+  MailController.test
+);
 
 export const MailRoutes = router;
