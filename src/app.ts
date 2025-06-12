@@ -10,8 +10,14 @@ const app: Application = express();
 // Middleware setup
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://www.hovenierslokaal.nl/"],
+    origin: [
+      "http://localhost:3000", 
+      "https://www.hovenierslokaal.nl", // Remove trailing slash
+      "http://64.225.69.59" // Add your server's own domain if needed
+    ],
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
   })
 );
 app.use(cookieParser());
