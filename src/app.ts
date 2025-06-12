@@ -5,6 +5,7 @@ import router from "./app/routes";
 import globalErrorHandler from "./app/middleware/globalErrorHandler";
 import notFound from "./app/middleware/notFound";
 import path from "path";
+import morgan from "morgan";
 const app: Application = express();
 
 // Middleware setup
@@ -22,6 +23,7 @@ app.use(
 );
 app.use(cookieParser());
 app.use(express.json());
+app.use(morgan("dev"));
 
 app.use("/api/v1", router);
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
